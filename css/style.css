@@ -10,6 +10,10 @@
 	font-size:60px;
 	color: black;
 }
+span{
+	display: inline-block;
+	width: 50px;
+}
 
 #start,
 #stop,

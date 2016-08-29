@@ -12,7 +12,7 @@ var timerId;
 function hendler1(){
   startButton.style.display = 'none';
   pauseButton.style.display = 'inline-block';
-  timerId = setInterval(timer, 10);
+  timerId = setInterval(timer, 1);
 }
 
 
@@ -26,7 +26,7 @@ function hendler2(){
 
 
 function hendler3(){
-  timerId = setInterval(timer, 10);
+  timerId = setInterval(timer, 1);
   contButton.style.display = 'none';
   pauseButton.style.display = 'inline-block';
 }
@@ -37,7 +37,7 @@ function hendler4(){
   contButton.style.display = 'none';
   pauseButton.style.display = 'none';
   startButton.style.display = 'inline-block';
-  document.getElementById('msec').innerHTML = '00';
+  document.getElementById('msec').innerHTML = '000';
   document.getElementById('sec').innerHTML = '00';
   document.getElementById('min').innerHTML = '00';
   document.getElementById('hr').innerHTML = '00';
@@ -63,12 +63,15 @@ var z = 0;
 var t = 0;
 function timer(){
   if ( t < 10 ){
-    document.getElementById('msec').innerHTML = '0' + t;
+    document.getElementById('msec').innerHTML = '00' + t;
+  }
+  if ( t < 100 ){
+	  document.getElementById('msec').innerHTML = '0' + t;  
   }else{
-	  document.getElementById('msec').innerHTML = t;  
+	  document.getElementById('msec').innerHTML =  t;  
   }
     t++;	
-      if ( t == 100 ){
+      if ( t == 1000 ){
 	      x++;
 	      t = 0;
         document.getElementById('sec').innerHTML = '0' + x;	    
